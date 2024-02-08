@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/application-exit.png</file>
+        <file>images/settings.png</file>
+        <file>images/clear.png</file>
+        <file>images/save.png</file>
+        <file>images/success.png</file>
+        <file>images/rfid-signal.png</file>
+        <file>images/rfid-signal-on.png</file>
+        <file>images/fail.png</file>
+        <file>images/folder.png</file>
+        <file>images/train.png</file>
+        <file>images/twitter.png</file>
+        <file>images/twitter-icon.png</file>
+        <file>images/folder-search.png</file>
+    </qresource>
+</RCC>

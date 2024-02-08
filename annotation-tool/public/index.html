@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+    <title>NER Annotation Tool</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="angular-material/angular-material.css">
+    <script src="angular/angular.js"></script>
+    <script src="angular-aria/angular-aria.js"></script>
+    <script src="angular-animate/angular-animate.js"></script>
+    <script src="angular-material/angular-material.js"></script>
+    <script src="/javascripts/frontend.js"></script>
+  </head>
+  <body ng-app="annotationTool" ng-controller="annotationController as vm">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        Tweet Named Entity Annotation Tool
+      </div>
+    </md-toolbar>
+    <div id="tweet-container" style="height:200px; text-align: center; padding: 50px;">
+      <span class="tweet-word" 
+      ng-class="{'highlight': $index==vm.highlightIndex}" 
+      ng-click="vm.highlightIndex = $index"
+      ng-repeat="word in vm.tweet track by $index">
+        &nbsp;{{word}}
+      </span>
+    </div>
+    <div id="label-button-container" layout="column" layout-align="center center">
+      <div class="label-inner-container">
+        <md-button class="md-raised md-primary"
+        ng-click="vm.annotate(vm.highlightIndex, label.name)"
+        ng-repeat="label in vm.labels track by $index">
+          <md-icon>{{label.icon}}</md-icon>&nbsp;&nbsp;{{label.name}}&nbsp;
+        </md-button>
+      </div>
+      <br>
+      <br>
+      
+      <div>
+        <md-button class="md-raised md-primary"
+          ng-click="vm.annotateAndGetNext()"
+          style="background: #0c3">
+          go to next tweet
+        </md-button>
+      </div>
+      <br>
+      <div style="font-size:24px;">Remaining: {{vm.remaining}}</div>
+      <br>
+      <div> If you miss a word(incorrect tagging) you can turn back by clicking on the word!</div>
+      <br>
+      <div>For candidate location entities please consider whether it is a proper Google Maps search query</div>
+    </div>
+    <style>
+      .tweet-word {
+        font-size: 24px;
+      }
+
+      .label-inner-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 40%;
+        min-width: 300px;
+      }
+
+      #label-button-container .md-raised:nth-child(2n) {
+        background: #e23 !important;
+      }
+
+      .tweet-word.highlight {
+        background: #457;
+        color: #fff;
+        border-radius: 4px;
+      }
+    </style>
+  </body>
+</html>

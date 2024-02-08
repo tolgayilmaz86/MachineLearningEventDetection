@@ -1,0 +1,22 @@
+<<<<<<< 0cceb48dd2be9b70737d77c35675833ac83dd951
+richter ölçeği
+rihter ölçeğine
+deprem meydana geldi
+ilk belirlemelere göre
+çevre bölgelerden
+can ve mal kaybı
+kilometre altında
+km altında
+rasathanesi
+beşik gibi
+merkez üssü
+artçı
+sarsıntı
+sallandık
+deprem
+=======
+caddesi
+bulvarı
+alt geçidi
+köprüsü
+>>>>>>> annotated data integrated
